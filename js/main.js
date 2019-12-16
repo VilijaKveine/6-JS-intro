@@ -121,7 +121,7 @@ console.log('-----------------');
 // console.log( daugyba(-3, 8 ) );
 // console.log( daugyba(-3, -8 ) );
 
-// console.log('-------------------');
+console.log('-------------------');
 console.log('DIDZIAUSIAS SKAICIUS SARASE');
 
 function didziausiasSkaiciusSarase( list ) {
@@ -225,8 +225,38 @@ console.log( isrinktiRaides ('abdefc', -2));
 console.log( isrinktiRaides ('abcdefg ', -8 ));
 
 
+console.log('-------------------');
+console.log('DALYBA');
 
+function dalyba (s1, s2) {
+    if (isFinite (s1) === false || s1===null || Array.isArray(s1) ===true ) {
+        return 'duok pirma skaiciu';
+    }
+    if (isFinite (s2) === false ||s2===null || Array.isArray(s2) ===true) {
+        return 'duok antra skaiciu';
+    }
+    if ( s2 === 0 ) {
+        return 'dalyba is nulio negalima';
+    }
+    return s1 / s2;
+
+}
   
+    console.log( dalyba ('a', 'b') );
+    console.log( dalyba (Infinity, -7) );
+    console.log( dalyba (null, NaN) );
+    console.log( dalyba ('eards', '8') );
+    console.log( dalyba (1, 0) );
+
+    console.log( dalyba (3, 1) );
+    console.log( dalyba (10, 5) );
+    console.log( dalyba (1/3, 3) );
+
+
+
+
+
+    
 
 
 
