@@ -177,6 +177,60 @@ console.log( didziausiasSkaiciusSarase( [ 'asd', 'asd', 'asd', 'asd', 2, 7 ] ) )
 console.log( didziausiasSkaiciusSarase( [ 'asd', true, false, NaN, -Infinity, Infinity, 2, 8 ] ) );
 
 
+console.log( '-------------');
+console.log( 'ISRINKTI RAIDES');
+
+function isrinktiRaides ( text, step ) {
+    if (typeof(text) !== 'string') { 
+        return 'pirmas parametras turi buti tekstas';
+    }
+    if (typeof(step) !== 'number') {
+        return 'antras parametras turi buti skaicius';
+    }
+    if (step === 0 ) {
+        return 'zingsnis negali buti nulinis';
+    }
+    if (step % 1 !== 0 ) {
+        return 'duok man sveika skaiciu'; 
+    }
+    if (Math.abs (step) > text.length ) {
+        return 'tekstas per trumpas isrinkti raides';
+    }
+    let ats = '';
+    if ( step > 0 ){
+        for (let i=step-1; i<text.length; i=i+step ) {
+            ats +=  text [i];
+            // ats = ats + text[i];
+        // console.log(text[i]);
+        }  
+    } else {
+            for (let i=text.length+step; i>=0; i=i+step ) {
+                ats +=  text [i];  
+        }
+    }
+
+
+    return ats;
+}
+
+console.log( isrinktiRaides (1561, 2 ));
+console.log( isrinktiRaides ('abcdefg', 2 ) );
+console.log( isrinktiRaides ('abcdefghijkl', 3 ) );
+console.log( isrinktiRaides ('abcdefghijkl', 3.2 ));
+console.log( isrinktiRaides ('abc', 0 ) );
+console.log( isrinktiRaides ('abcd', 4 ));
+console.log( isrinktiRaides ('abcdef', 4 ));
+
+console.log( isrinktiRaides ('abdefc', -2));
+console.log( isrinktiRaides ('abcdefg ', -8 ));
+
+
+
+  
+
+
+
+
 
 
 
